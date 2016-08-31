@@ -45,13 +45,13 @@ body > input[type="radio"] {
     background-image: url(../img/index/ice1.png);
     background-repeat: no-repeat;
     background-position: 50% 0%;
-    overflow: auto;
+    overflow: hidden;
 }
 .wrapper-inner {
     width: 100%;
     background-color: #849d8f;
     margin: 0;
-    overflow: auto;
+    overflow: hidden;
 }
 .container {
     min-width: 860px;
@@ -433,7 +433,6 @@ input:focus + .label-box label {
 }
 .number {
     font-size: 22px;
-	text-decoration: none;
 }
 .slider {
     position: relative;
@@ -607,6 +606,16 @@ p {
     z-index: 400;
     top: 0;
 }
+.hit-icon:hover::before {
+    content: " ";
+    width: 60px;
+    height: 60px;
+    display: block;
+    background: url("../img/index/hit.png");
+    position: absolute;
+    z-index: 400;
+    top: 8px;
+}
 .price {
     position: absolute;
     bottom: 26px;
@@ -660,7 +669,7 @@ p {
     display: block;
     margin: 0;
     padding: 0 20px;
-    padding-bottom: 16px;
+    padding-bottom: 20px;
     border-radius: 15px;
     margin-bottom: 40px;
     margin-top: -25px;
@@ -753,13 +762,12 @@ h3 {
 }
 .news-right  {
     float: right;
-    padding: 17px 27px;
+    padding: 5px;
     background: white;
     color: black;
     background-image: url("../img/index/email-pattern.png");
-    position: relative;
 }
-.news-right::before {
+/*.news-right::before {
     content: "";
     display: block;
     position: absolute;
@@ -770,17 +778,44 @@ h3 {
     top: 5px;
     left: 1%;
     z-index: 0;
+}*/
+.news-right-content {
+	display: block;
+	padding: 25px 20px;
+	box-sizing: padding-box;
+	background: #f8f7f4;
+	border-radius: 15px;
 }
-.news-right form {
-    position: relative;
+.news .sub-text {
+	display: block;
+	height: 100px;
 }
-.news-right input[type="email"] {
-    float: left;
-    width: 67%;
-    height: 36px;
+.news .button {
+	float: none;
+	margin: 0;
+	width: 130px;
+	vertical-align: middle;
+	padding: 12px 18px;
+}
+.news-email {
+	display: inline-block;
+	margin-top: 7px;
+	margin-bottom: 11px;
+	margin-right: 7px;
+	width: calc(100% - 139px);
+}
+.news-submit {
+	display: inline-block;
+	width: 10%;
+}
+.news-email input {
+	width: auto;
+	height: 36px;
     padding: 2px 15px;
     border-radius: 5px;
     border: 1px solid #d3d3d2;
+	margin: 0;
+	width: calc(100% - 33px);
 }
 .news-right input[type="email"]:hover {
     box-shadow: inset 0px 0px 0px 2px #c7c6c5;
@@ -790,20 +825,9 @@ h3 {
 }
 .news-right label {
     position: absolute;
-    top: 10px;
+    top: -32px;
 }
-.news-right input[type="submit"] {
-    width: 130px;
-    height: 45px;
-    padding: 10px;
-    border: none;
-    position: absolute;
-    right: -5px;
-    bottom: -43px;
-    color: white;
-    cursor:pointer
-}
-.name {
+.news .name {
     float: left;
     margin-bottom: 5px;
 }
@@ -815,16 +839,13 @@ h3 {
     font-weight: 700;
     width: 300px;
     color: black;
+	background: rgba(255,255,255,0.5)
 }
 .news-block>a.news-title:hover {
     color: #e84d37;
 }
 .news-block>a.news-title:active {
     color: #e84d37;
-}
-.sub-text {
-    margin-bottom: 44px;
-    position: relative;
 }
 .map {
     width: 100%;
@@ -834,7 +855,7 @@ h3 {
 }
 .feedback-form {
     position: absolute;
-    right: 42px;
+    right: -2px;
     bottom: 170px;
     display: block;
     width: 302px;
@@ -921,8 +942,11 @@ h3 {
     position: relative;
     margin: 0;
 }
-.footer-menu-left .footer-active:hover::before {
-    content: " ";
+.footer-active {
+	font-weight: 700;
+}
+.footer-active::before {
+	content: " ";
     display: block;
     width: 20px;
     height: 23px;
@@ -1308,13 +1332,13 @@ input[type="radio"]+label::before {
     vertical-align: middle;
     margin: 3px 10px 3px 10px;
     box-sizing: border-box;
-    background-image: url("../img/catalog/radio-off.svg");
+    background: url("../img/catalog/radio-off.svg") no-repeat;
 }
 input[type="radio"]:checked+label::after {
     content: " ";
     width: 20.2px;
     height: 20px;
-    background-image: url("../img/catalog/radio-on.svg");
+    background: url("../img/catalog/radio-on.svg") no-repeat;
     position: absolute;
     top: 1px;
     left: 10px;
@@ -1330,12 +1354,12 @@ input[type="radio"]:checked+label::after {
     padding-left: 0;
 }
 .fill-filter-list {
-    padding: 7px;
+    padding: 7px 8px;
     margin-top: -2px;
     border-radius: 18px;
     font-size: 16px;
     background-color: #aabbb1;
-    width: 687px;
+    width: 685px;
 }
 .fill-filter-list>label {
     margin-right: 13px;
@@ -1355,21 +1379,21 @@ input[type="checkbox"]+label::before {
     display: inline-block;
     width: 20px;
     height: 20px;
-    border-radius: 4px;
     vertical-align: middle;
     margin: -1px 10px 0px 6px;
-    border: 1px solid white;
     box-sizing: border-box;
+	border: 1px solid white;
+	border-radius: 5px;
 }
 input[type="checkbox"]:checked+label::after {
     content: "";
     width: 20px;
-    height: 20px;
+    height: 14px;
     position: absolute;
-    top: 1px;
-    left: 6px;
+    top: 3px;
+    left: 9px;
     font-weight: 800;
-    background-image: url("../img/catalog/checkbox-on.svg");
+    background: url("../img/catalog/checkbox-on.svg") no-repeat;
 }
 .filters input[type="submit"] {
     float: left;
