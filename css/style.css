@@ -1131,6 +1131,9 @@ h3 {
     background-color: #f8f7f4;
     box-shadow: 0px 20px 20px 0px rgba(0,0,0,0.4);
     position: relative;
+	border-spacing: 8px; 
+	border-collapse: separate; 
+}
 }
 .basket-hover tr:first-child {
     margin-top: 2px;
@@ -1164,6 +1167,7 @@ h3 {
     color: #333333;
     font-size: 15px;
     font-weight: 700;
+	text-align: right;
 }
 .basket-hover .basket-img {
     margin-bottom: -6px;
