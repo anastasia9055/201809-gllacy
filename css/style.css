@@ -289,7 +289,9 @@ label[for="search"] {
     pointer-events: none;
 }
 label[for="password"],
-label[for="email"] {
+label[for="email-news"],
+label[for="email-login"],
+label[for="email-feedback"] {
     position: absolute;
     bottom: 30px;
     left: 15px;
