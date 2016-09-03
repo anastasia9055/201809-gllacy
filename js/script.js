@@ -2,7 +2,7 @@ var link = document.querySelector(".feedback-form-btn");
 var popup = document.querySelector(".feedback");
 var close = popup.querySelector(".feedback-close");
 var login = popup.querySelector("[name-login]");
-var back = document.querySelector(".back");
+var back = document.querySelector("body");
 
 link.addEventListener("click", function (event) {
 	event.preventDefault();
@@ -11,7 +11,7 @@ link.addEventListener("click", function (event) {
 });
 link.addEventListener("click", function (event) {
 	event.preventDefault();
-	back.classList.add("back-show");
+	back.classList.add("popup-back");
 });
 close.addEventListener("click", function (event) {
 	event.preventDefault();
@@ -19,5 +19,5 @@ close.addEventListener("click", function (event) {
 });
 close.addEventListener("click", function (event) {
 	event.preventDefault();
-	back.classList.remove("back-show");
+	back.classList.remove("popup-back");
 });
