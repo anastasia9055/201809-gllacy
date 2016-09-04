@@ -103,7 +103,7 @@ body > input[type='radio']
 }
 .main-header
 {
-    width: 101%;
+    width: 100%;
     height: 70px;
 
     background: rgba(0, 0, 0, 0);
@@ -459,8 +459,12 @@ label[for='email-feedback']
 input:focus + .label-box label
 {
     font-size: 11px;
-
-    transform: translateY(-30px);
+	
+	-webkit-transform: translateY(-30px);
+	  -moz--transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+         -o-transform: translateY(-30px);
+            transform: translateY(-30px);
 
     color: #8fbdec;
 }
@@ -468,7 +472,11 @@ input:valid + .label-box label
 {
     font-size: 11px;
 
-    transform: translateY(-30px);
+	-webkit-transform: translateY(-30px);
+	  -moz--transform: translateY(-30px);
+        -ms-transform: translateY(-30px);
+         -o-transform: translateY(-30px);
+            transform: translateY(-30px);
 
     color: #b7b7b7;
 }
@@ -840,7 +848,6 @@ h2
 .stock > p
 {
     height: auto;
-	margin-bottom: 90px;
 }
 .stock-left
 {
@@ -2213,6 +2220,7 @@ input[type='checkbox']:checked + label::after
 
     content: '';
     -webkit-transform: rotate(180deg);
+	  -moz--transform: rotate(180deg);
         -ms-transform: rotate(180deg);
          -o-transform: rotate(180deg);
             transform: rotate(180deg);
@@ -2220,8 +2228,6 @@ input[type='checkbox']:checked + label::after
 
     opacity: .2;
     background: url('../img/catalog/paginator.png') no-repeat;
-
-    -moz--transform: rotate(180deg);
 }
 .paginator::after
 {
