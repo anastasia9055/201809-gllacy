@@ -104,7 +104,6 @@ body > input[type='radio']
 .main-header
 {
     width: 100%;
-    height: 70px;
 
     background: rgba(0, 0, 0, 0);
 }
@@ -696,6 +695,7 @@ main
     font-weight: 700;
     line-height: 24px;
 
+
     position: absolute;
     z-index: 100;
     right: 0;
@@ -744,6 +744,10 @@ main
     border: 2px solid white;
     border-radius: 50%;
     background-color: transparent;
+}
+.slider-controls label:hover
+{
+    background-color: rgba(255,255,255,0.5);
 }
 #btn-1:checked ~ .wrapper #slide1,
 #btn-2:checked ~ .wrapper #slide2,
@@ -1282,7 +1286,6 @@ h3
     width: 300px;
 
     color: black;
-    background: rgba(255,255,255,.5);
 }
 .news-block > a.news-title:hover
 {
@@ -1557,6 +1560,18 @@ a.feedback-form-btn
     border-radius: 10px;
     background-color: #f8f7f4;
 }
+@keyframes bounce 
+{
+  0%   {
+    transform: translateX(-500px);
+  }
+  70%  {
+    transform: translateX(30px);
+  }
+  100%  {
+    transform: translateX(0px);
+  }
+}
 .feedback-close
 {
     position: absolute;
@@ -1659,6 +1674,7 @@ a.feedback-form-btn
 .feedback-show
 {
     display: block;
+	animation: bounce 0.6s;
 }
 
 /* КАТАЛОГ */
@@ -2011,6 +2027,10 @@ input[type='radio']:checked + label::after
 
     background: url('../img/catalog/radio-on.svg') no-repeat;
 }
+input[type='radio']:disabled + label::after
+{
+    opacity: .5;
+}
 input[type='radio'] + label:hover::before
 {
     display: inline-block;
@@ -2026,6 +2046,10 @@ input[type='radio'] + label:hover::before
     vertical-align: middle;
 
     background: url('../img/catalog/radio-hover.svg') no-repeat;
+}
+input[type='radio']:disabled + label:before
+{
+	opacity: .5;
 }
 .fill-filter legend
 {
@@ -2097,13 +2121,17 @@ input[type='checkbox'] + label:hover::before
             box-sizing: border-box;
     width: 20px;
     height: 20px;
-    margin: -1px 10px 0 6px;
+    margin: -1px 9px 0 6px;
 
     content: ' ';
     vertical-align: middle;
 
     border: 2px solid white;
     border-radius: 5px;
+}
+input[type='checkbox']:disabled + label:before
+{
+	opacity: .5;
 }
 input[type='checkbox']:checked + label::after
 {
@@ -2117,6 +2145,10 @@ input[type='checkbox']:checked + label::after
     content: '';
 
     background: url('../img/catalog/checkbox-on.svg') no-repeat;
+}
+input[type='checkbox']:disabled + label::after
+{
+    opacity: .5;
 }
 .filters input[type='submit']
 {
@@ -2166,8 +2198,8 @@ input[type='checkbox']:checked + label::after
 
     float: right;
 
-    margin-top: 80px;
-    margin-right: 2.3%;
+    margin-top: 78px;
+    margin-right: 0%;
     margin-bottom: 30px;
 }
 .paginator > a
@@ -2198,38 +2230,39 @@ input[type='checkbox']:checked + label::after
     color: black;
     background-color: white;
 }
-.paginator::before
+.paginator > a.page-before 
 {
-    position: absolute;
-    top: 5px;
-    left: -22px;
-
     display: inline-block;
 
     width: 8px;
     height: 14px;
-
+	
+	border-radius: 0px;
+	padding: 0;
+	margin-right: 12px;
+	
     content: '';
     -webkit-transform: rotate(180deg);
 	  -moz--transform: rotate(180deg);
         -ms-transform: rotate(180deg);
          -o-transform: rotate(180deg);
             transform: rotate(180deg);
-    vertical-align: middle;
 
     opacity: .2;
     background: url('../img/catalog/paginator.png') no-repeat;
+	
 }
-.paginator::after
-{
-    position: absolute;
-    top: 5px;
-    right: -25px;
 
+.paginator > a.page-after 
+{
     display: inline-block;
 
     width: 8px;
     height: 14px;
+	
+	border-radius: 0px;
+	padding: 0;
+	margin-left: 10px;
 
     content: '';
     vertical-align: middle;
