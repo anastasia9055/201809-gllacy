@@ -460,26 +460,24 @@ input:focus + .label-box label
     font-size: 11px;
 
     -webkit-transform: translateY(-30px);
+	  -moz--transform: translateY(-30px);
         -ms-transform: translateY(-30px);
          -o-transform: translateY(-30px);
             transform: translateY(-30px);
 
     color: #8fbdec;
-
-    -moz--transform: translateY(-30px);
 }
 input:valid + .label-box label
 {
     font-size: 11px;
 
     -webkit-transform: translateY(-30px);
+	  -moz--transform: translateY(-30px);
         -ms-transform: translateY(-30px);
          -o-transform: translateY(-30px);
             transform: translateY(-30px);
 
     color: #b7b7b7;
-
-    -moz--transform: translateY(-30px);
 }
 .user-hover a
 {
@@ -1564,29 +1562,26 @@ a.feedback-form-btn
     0%
     {
         -webkit-transform: translateX(-500px);
+		  -moz--transform: translateX(-500px);
             -ms-transform: translateX(-500px);
              -o-transform: translateX(-500px);
                 transform: translateX(-500px);
-
-        -moz--transform: translateX(-500px);
     }
     70%
     {
         -webkit-transform: translateX(30px);
+		  -moz--transform: translateX(30px);
             -ms-transform: translateX(30px);
              -o-transform: translateX(30px);
                 transform: translateX(30px);
-
-        -moz--transform: translateX(30px);
     }
     100%
     {
         -webkit-transform: translateX(0px);
+		  -moz--transform: translateX(0px);
             -ms-transform: translateX(0px);
              -o-transform: translateX(0px);
                 transform: translateX(0px);
-
-        -moz--transform: translateX(0px);
     }
 }
 .feedback-close
@@ -2266,6 +2261,7 @@ input[type='checkbox']:disabled + label::after
 
     content: '';
     -webkit-transform: rotate(180deg);
+	  -moz--transform: rotate(180deg);
         -ms-transform: rotate(180deg);
          -o-transform: rotate(180deg);
             transform: rotate(180deg);
@@ -2273,8 +2269,6 @@ input[type='checkbox']:disabled + label::after
     opacity: .2;
     border-radius: 0;
     background: url('../img/catalog/paginator.png') no-repeat;
-
-    -moz--transform: rotate(180deg);
 }
 
 .paginator > a.page-after
